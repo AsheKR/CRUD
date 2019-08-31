@@ -1,3 +1,6 @@
+### env_settings ###
+.env_settings/
+
 
 # Created by https://www.gitignore.io/api/git,macos,python,django,virtualenv,pycharm+all
 # Edit at https://www.gitignore.io/?templates=git,macos,python,django,virtualenv,pycharm+all
