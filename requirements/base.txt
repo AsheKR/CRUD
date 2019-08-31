@@ -1,0 +1,13 @@
+## Django ##
+pytz==2019.2
+sqlparse==0.3.0
+Django==2.2.4
+
+## Django Environ ##
+django-environ==0.4.5
+
+## Hash ##
+argon2-cffi==19.1.0
+six==1.12.0
+cffi==1.12.3
+pycparser==2.19
