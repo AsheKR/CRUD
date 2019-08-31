@@ -7,6 +7,6 @@ class MembersAppConfig(AppConfig):
 
     def ready(self):
         try:
-            import users.signals
+            import users.signals  # pylint: disable=W0611
         except ImportError:
             pass
