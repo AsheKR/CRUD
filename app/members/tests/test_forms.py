@@ -7,7 +7,7 @@ class TestUserCreationForm:
     def test_clean_username(self):
         # A user with proto_user params does not exist yet.
         proto_user = mommy.prepare("members.Member")
-        proto_user.set_password('password')
+        proto_user.set_password("password")
 
         form = UserCreationForm(
             {
