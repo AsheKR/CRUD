@@ -1,5 +1,16 @@
 -r ./base.txt
 
+## boto3 ##
+boto3==1.9.220
+botocore==1.12.220
+docutils==0.15.2
+jmespath==0.9.4
+python-dateutil==2.8.0
+s3transfer==0.2.1
+
+## django-storages ##
+django-storages==1.7.1
+
 ## Sentry ##
 sentry-sdk==0.11.2
 certifi==2019.6.16
@@ -7,3 +18,6 @@ urllib3==1.25.3
 
 ## PostgreSQL ##
 psycopg2-binary==2.8.3
+
+## gunicorn ##
+gunicorn==19.9.0
