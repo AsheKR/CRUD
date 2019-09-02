@@ -11,3 +11,9 @@ argon2-cffi==19.1.0
 six==1.12.0
 cffi==1.12.3
 pycparser==2.19
+
+
+## credstash ##
+asn1crypto==0.24.0
+credstash==1.16.1
+cryptography==2.7
