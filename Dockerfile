@@ -1,8 +1,6 @@
 FROM                        python:3.6.7-slim
 MAINTAINER                  tech@ashe.kr
 
-ENV                         DJANGO_SETTINGS_MODULE  config.settings.production
-
 WORKDIR                     /srv
 
 ADD                        ./app /srv/app/
