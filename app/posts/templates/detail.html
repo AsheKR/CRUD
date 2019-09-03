@@ -1,0 +1,20 @@
+<h1>{{ object.title }}</h1>
+
+<button><a href="{% url 'posts:update' object.pk %}">수정</a></button>
+<button><a href="{% url 'posts:delete' object.pk %}">삭제</a></button>
+
+<div>
+    작성일자: {{ object.created|date:"Y-m-d A h:i" }}
+</div>
+
+<div>
+    수정일자: {{ object.modified|date:"Y-m-d A h:i" }}
+</div>
+
+<h3>
+    내용
+</h3>
+
+<pre>
+    {{ object.content }}
+</pre>
