@@ -1,0 +1,16 @@
+<h2>댓글 목록</h2>
+
+<ul>
+{% for comment in object_list %}
+    <li>{{ comment.content }}</li>
+    {% if comment.replies %}
+        <ul>
+        {% for reply in comment.replies %}
+            <li>
+                {{ reply.content }}
+            </li>
+        {% endfor %}
+        </ul>
+    {% endif %}
+{% endfor %}
+</ul>

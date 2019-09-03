@@ -1,0 +1,6 @@
+<h2>댓글 생성</h2>
+
+<form method="post" action="{% url 'posts:comment' object.pk %}">{% csrf_token %}
+    {{ form.as_p }}
+    <input type="submit" value="전송">
+</form>
