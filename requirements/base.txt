@@ -3,8 +3,10 @@ pytz==2019.2
 sqlparse==0.3.0
 Django==2.2.4
 
+
 ## Django Environ ##
 django-environ==0.4.5
+
 
 ## Hash ##
 argon2-cffi==19.1.0
@@ -17,3 +19,7 @@ pycparser==2.19
 asn1crypto==0.24.0
 credstash==1.16.1
 cryptography==2.7
+
+
+## django-model-utils ##
+django-model-utils==3.2.0
