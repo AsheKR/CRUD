@@ -18,3 +18,7 @@
 <pre>
     {{ object.content }}
 </pre>
+
+{% include "comments/list.html" with object_list=object.comments %}
+
+{% include "comments/create.html" with object=object form=comment_form %}

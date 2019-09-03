@@ -19,3 +19,7 @@ class Post(TimeStampedModel, SoftDeletableModel, models.Model):
 
     class Meta:
         ordering = ['-created']
+
+    @property
+    def comments(self):
+        return self.comment_set.all()
