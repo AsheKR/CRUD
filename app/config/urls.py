@@ -21,6 +21,7 @@ urlpatterns = [
     path(settings.ADMIN_URL, admin.site.urls),
 
     path('posts/', include('posts.urls')),
+    path('comments/', include('comments.urls')),
 ]
 
 if settings.DEBUG:

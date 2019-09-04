@@ -1,0 +1,12 @@
+<pre>{{ object.content }}</pre>
+
+삭제하시겠습니까?
+
+<form method="post">{% csrf_token %}
+    <button type="reset">
+        <a href="{{ request.META.HTTP_REFERER }}">취소</a>
+    </button>
+    <button type="submit">
+        확인
+    </button>
+</form>

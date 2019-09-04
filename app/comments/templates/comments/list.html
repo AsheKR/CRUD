@@ -2,12 +2,26 @@
 
 <ul>
 {% for comment in object_list %}
-    <li>{{ comment.content }}</li>
+    <li>
+        {{ comment.content }}
+        <button>
+            <a href="{% url 'comments:update' comment.pk %}">수정</a>
+        </button>
+        <button>
+            <a href="{% url 'comments:delete' comment.pk %}">삭제</a>
+        </button>
+    </li>
     {% if comment.replies %}
         <ul>
         {% for reply in comment.replies %}
             <li>
                 {{ reply.content }}
+                <button>
+                    <a href="{% url 'comments:update' reply.pk %}">수정</a>
+                </button>
+                <button>
+                    <a href="{% url 'comments:delete' reply.pk %}">삭제</a>
+                </button>
             </li>
         {% endfor %}
         </ul>
