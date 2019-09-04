@@ -12,7 +12,7 @@ class FormMinxinView(FormMixin):
         self.model = self.form.Meta.model
 
         # Setting Template
-        self.template_name = f'{view_type}.html'
+        self.template_name = f'{self.model._meta.app_label}/{view_type}.html'
 
 
 class FormListView(FormMinxinView, ListView):
@@ -38,7 +38,7 @@ class FormDetailView(FormMinxinView, DetailView):
 
 
 class FormUpdateView(FormMinxinView, UpdateView):
-    success_redirect_with_kwargs = None
+    view_name = None
 
     def get(self, request, *args, **kwargs):
         self._init_data('update')
@@ -46,8 +46,14 @@ class FormUpdateView(FormMinxinView, UpdateView):
 
     def post(self, request, *args, **kwargs):
         self._init_data('update')
-        self.success_url = reverse_lazy(self.success_redirect_with_kwargs, kwargs=kwargs)
         return super().post(request, *args, **kwargs)
+
+    def get_success_url(self):
+        if self.view_name:
+            self.success_url = reverse_lazy(self.view_name, kwargs=self.kwargs)
+        else:
+            self.success_url = super().get_success_url()
+        return str(self.success_url)
 
 
 class FormDeleteView(FormMinxinView, DeleteView):
