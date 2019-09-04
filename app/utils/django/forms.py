@@ -12,7 +12,8 @@ class FormMinxinView(FormMixin):
         self.model = self.form.Meta.model
 
         # Setting Template
-        self.template_name = f'{self.model._meta.app_label}/{view_type}.html'
+        if not self.template_name:
+            self.template_name = f'{self.model._meta.app_label}/{view_type}.html'
 
 
 class FormListView(FormMinxinView, ListView):
