@@ -27,7 +27,7 @@ class PostDetailView(FormDetailView):
 
 class PostUpdateView(FormUpdateView):
     form_class = PostForm
-    success_redirect_with_kwargs = 'posts:detail'
+    view_name = 'posts:detail'
 
 
 class PostDeleteView(FormDeleteView):
