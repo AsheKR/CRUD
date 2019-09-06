@@ -234,7 +234,9 @@ Action: 파이프라인 안에서 실행되는 하나의 동작
 
 마스터로 풀 리퀘스트 보낼 때 트리거되게했다.
 
-`On Push -> Branches by wildcards`로 트리거 설정해놓으면 풀 리퀘스트에 모두 트리거된다.
+Pipelines 보는 화면에서 오른쪽 설정에 `Pull Request: Off`를 On으로 변경 후
+
+`On Push -> Pull requests by wildcard`로 트리거 설정해놓으면 풀 리퀘스트에 모두 트리거된다.
 
 1.2 Action
 
