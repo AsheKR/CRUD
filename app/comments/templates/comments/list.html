@@ -1,0 +1,30 @@
+<h2>댓글 목록</h2>
+
+<ul>
+{% for comment in object_list %}
+    <li>
+        {{ comment.content }}
+        <button>
+            <a href="{% url 'comments:update' comment.pk %}">수정</a>
+        </button>
+        <button>
+            <a href="{% url 'comments:delete' comment.pk %}">삭제</a>
+        </button>
+    </li>
+    {% if comment.replies %}
+        <ul>
+        {% for reply in comment.replies %}
+            <li>
+                {{ reply.content }}
+                <button>
+                    <a href="{% url 'comments:update' reply.pk %}">수정</a>
+                </button>
+                <button>
+                    <a href="{% url 'comments:delete' reply.pk %}">삭제</a>
+                </button>
+            </li>
+        {% endfor %}
+        </ul>
+    {% endif %}
+{% endfor %}
+</ul>

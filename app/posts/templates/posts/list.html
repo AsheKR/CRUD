@@ -1,0 +1,26 @@
+<h1>게시글 목록</h1>
+
+<button>
+    <a href="{% url 'posts:create' %}">글 생성</a>
+</button>
+
+<table>
+    <thead>
+        <tr>
+            <th>번호</th>
+            <th>제목</th>
+            <th>생성일</th>
+        </tr>
+    </thead>
+    <tbody>
+    {% for post in object_list %}
+        <tr>
+            <td>{{ post.pk }}</td>
+            <td>
+                <a href="{% url 'posts:detail' post.pk %}">{{ post.title }}</a>
+            </td>
+            <td>{{ post.created|date:"Y-m-d A h:i" }}</td>
+        </tr>
+    {% endfor %}
+    </tbody>
+</table>

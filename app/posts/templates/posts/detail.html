@@ -1,0 +1,25 @@
+<h1>{{ object.title }}</h1>
+
+<button><a href="{% url 'posts:list' %}">목록</a></button>
+<button><a href="{% url 'posts:update' object.pk %}">수정</a></button>
+<button><a href="{% url 'posts:delete' object.pk %}">삭제</a></button>
+
+<div>
+    작성일자: {{ object.created|date:"Y-m-d A h:i" }}
+</div>
+
+<div>
+    수정일자: {{ object.modified|date:"Y-m-d A h:i" }}
+</div>
+
+<h3>
+    내용
+</h3>
+
+<pre>
+    {{ object.content }}
+</pre>
+
+{% include "comments/list.html" with object_list=object.comments %}
+
+{% include "comments/create.html" with object=object form=comment_form %}

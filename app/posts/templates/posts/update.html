@@ -1,0 +1,9 @@
+<form method="post">{% csrf_token %}
+    {{ form.as_p }}
+    <button>
+        <a href="{{ request.META.HTTP_REFERER }}">취소</a>
+    </button>
+    <button type="submit">
+        확인
+    </button>
+</form>
